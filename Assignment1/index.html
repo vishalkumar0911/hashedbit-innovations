@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GrandStay Luxury Hotel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(to right, #8e0e00, #1f1c18);
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section img {
+            width: 55px;
+            margin-right: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            font-size: 20px;
+        }
+
+        /* MENUBAR */
+        nav {
+            background-color: #2c2c2c;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            padding: 15px 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li:hover {
+            background-color: #ffd700;
+        }
+
+        nav ul li:hover a {
+            color: black;
+        }
+
+        /* LAYOUT */
+        .container {
+            display: flex;
+            padding: 40px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 25%;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-right: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            color: #8e0e00;
+        }
+
+        .sidebar p {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .book-btn {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background: #8e0e00;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            width: 75%;
+        }
+
+        .rooms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 10px;
+            width: 31%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .box img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            image-rendering: auto;
+        }
+
+        .box-content {
+            padding: 15px;
+        }
+
+        .box-content h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .box-content p {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #8e0e00;
+            margin-bottom: 10px;
+        }
+
+        .room-btn {
+            padding: 8px 12px;
+            border: none;
+            background: #1f1c18;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .room-btn:hover {
+            background: #8e0e00;
+        }
+
+        footer {
+            background: #1f1c18;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="images/logo.png">
+        <h1>GrandStay Luxury Hotel</h1>
+    </div>
+
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h2>Quick Booking</h2>
+        <p>Location: Mumbai, India</p>
+        <p>Check-In: 20/03/2026</p>
+        <p>Check-Out: 22/03/2026</p>
+        <p>Time Zone: IST</p>
+        <p>Guests: 2 Adults</p>
+        <button class="book-btn">Book Now</button>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="rooms">
+
+            <!-- 9 ROOM TYPES -->
+
+            <div class="box">
+                <img src="images/deluxe.jpg">
+                <div class="box-content">
+                    <h2>Deluxe Room</h2>
+                    <p>Modern room with premium comfort and city view.</p>
+                    <div class="price">₹6,500 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/suite.jpg">
+                <div class="box-content">
+                    <h2>Luxury Suite</h2>
+                    <p>Elegant suite with lounge and breakfast.</p>
+                    <div class="price">₹12,000 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/family.jpg">
+                <div class="box-content">
+                    <h2>Family Room</h2>
+                    <p>Spacious family room with 3 beds.</p>
+                    <div class="price">₹8,500 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/ultra.jpg">
+                <div class="box-content">
+                    <h2>Ultra Luxury Suite</h2>
+                    <p>Top-tier luxury experience with private lounge.</p>
+                    <div class="price">₹20,000 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/poolvilla.jpg">
+                <div class="box-content">
+                    <h2>Private Pool Villa</h2>
+                    <p>Exclusive villa with private swimming pool.</p>
+                    <div class="price">₹28,000 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/seaview.jpg">
+                <div class="box-content">
+                    <h2>Sea View Room</h2>
+                    <p>Relaxing sea-facing room with balcony.</p>
+                    <div class="price">₹14,000 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/presidential.jpg">
+                <div class="box-content">
+                    <h2>Presidential Suite</h2>
+                    <p>Luxury suite for VIP guests with premium service.</p>
+                    <div class="price">₹35,000 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/honeymoon.jpg">
+                <div class="box-content">
+                    <h2>Honeymoon Suite</h2>
+                    <p>Romantic suite with candlelight setup.</p>
+                    <div class="price">₹18,000 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/executive.jpg">
+                <div class="box-content">
+                    <h2>Executive Business Room</h2>
+                    <p>Perfect for corporate stays with workspace.</p>
+                    <div class="price">₹10,500 / Night</div>
+                    <button class="room-btn">Reserve</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<footer>
+    © 2026 Royal Taj Hotel, Mumbai | Internship Assignment
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Style Controller</title>
+
+    <style>
+        .text-here {
+            font-size: 55px;
+            font-family: sans-serif;
+            color: black;
+            text-decoration: none;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Text Container -->
+<div class='text-here' id='text-container'>
+    This is some example text
+</div>
+
+<br>
+
+<!-- Color Input -->
+<input type="text" id="colorbox">
+<button id="colorchange">Change Colour</button>
+
+<br><br>
+
+<!-- Font Size Slider -->
+<input type="range" id="fontsize" min="10" max="100" value="55">
+
+<br><br>
+
+<!-- Style Buttons -->
+<button id="italic" class="stylebt">Italics</button>
+<button id="underline" class="stylebt">Underline</button>
+<button id="bold" class="stylebt">Bold</button>
+
+<br><br>
+
+<!-- Font Family Dropdown -->
+<select id="list">
+    <option value="serif">Serif</option>
+    <option value="sans-serif" selected>Sans-Serif</option>
+    <option value="monospace">Monospace</option>
+    <option value="cursive">Cursive</option>
+    <option value="fantasy">Fantasy</option>
+</select>
+
+<br><br>
+
+<!-- Get CSS Button -->
+<button id="getstyle">Get CSS</button>
+
+<br><br>
+
+<!-- CSS Output -->
+<p id="css-props"></p>
+
+<script>
+
+const text = document.getElementById("text-container");
+const colorInput = document.getElementById("colorbox");
+const colorBtn = document.getElementById("colorchange");
+const fontSlider = document.getElementById("fontsize");
+const italicBtn = document.getElementById("italic");
+const underlineBtn = document.getElementById("underline");
+const boldBtn = document.getElementById("bold");
+const fontList = document.getElementById("list");
+const getStyleBtn = document.getElementById("getstyle");
+const cssOutput = document.getElementById("css-props");
+
+
+/* Change Text Color */
+colorBtn.onclick = function() {
+    text.style.color = colorInput.value;
+};
+
+
+/* Change Font Size */
+fontSlider.oninput = function() {
+    text.style.fontSize = fontSlider.value + "px";
+};
+
+
+/* Toggle Italic */
+italicBtn.onclick = function() {
+    text.style.fontStyle =
+        text.style.fontStyle === "italic" ? "normal" : "italic";
+};
+
+
+/* Toggle Underline */
+underlineBtn.onclick = function() {
+    text.style.textDecoration =
+        text.style.textDecoration === "underline" ? "none" : "underline";
+};
+
+
+/* Toggle Bold */
+boldBtn.onclick = function() {
+    text.style.fontWeight =
+        text.style.fontWeight === "bold" ? "normal" : "bold";
+};
+
+
+/* Change Font Family */
+fontList.onchange = function() {
+    text.style.fontFamily = fontList.value;
+};
+
+
+/* Get CSS Properties */
+getStyleBtn.onclick = function() {
+
+    let color = text.style.color || "black";
+    let size = text.style.fontSize || "55px";
+    let family = text.style.fontFamily || "sans-serif";
+    let decoration = text.style.textDecoration || "none";
+    let style = text.style.fontStyle || "normal";
+    let weight = text.style.fontWeight || "normal";
+
+    cssOutput.textContent =
+        "color: " + color + "; " +
+        "font-size: " + size + "; " +
+        "font-family: " + family + "; " +
+        "text-decoration: " + decoration + "; " +
+        "font-style: " + style + "; " +
+        "font-weight: " + weight + ";";
+};
+
+</script>
+
+</body>
+</html>

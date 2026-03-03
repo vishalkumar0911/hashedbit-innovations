@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Div Assignment</title>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+
+function createDiv(width, height, text) {
+
+    const container = document.getElementById("container");
+
+    const newDiv = document.createElement("div");
+
+    newDiv.style.width = width + "px";
+    newDiv.style.height = height + "px";
+
+    newDiv.textContent = text;
+
+    container.appendChild(newDiv);
+}
+
+
+createDiv(200, 100, "I am a new div");
+
+</script>
+
+</body>
+</html>

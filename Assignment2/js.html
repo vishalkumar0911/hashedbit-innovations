@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Assignment 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Assignment 2</h1>
+
+<!-- Question 1 -->
+<div class="section">
+    <h2>1. Display Even Numbers from 1 to 100</h2>
+    <p id="evenOutput"></p>
+</div>
+
+<!-- Question 2 -->
+<div class="section">
+    <h2>2. Calculator using Switch</h2>
+    <p id="calcOutput"></p>
+</div>
+
+<!-- Question 3 -->
+<div class="section">
+    <h2>3. Find Tax using Switch</h2>
+    <p id="taxOutput"></p>
+</div>
+
+<!-- Question 4 -->
+<div class="section">
+    <h2>4. Sum of Products of Corresponding Digits</h2>
+    <p id="digitOutput"></p>
+</div>
+
+<script>
+
+
+// 1. Even Numbers
+
+
+let evenNumbers = "";
+
+for (let i = 1; i <= 100; i++) {
+    if (i % 2 === 0) {
+        evenNumbers += i + " ";
+    }
+}
+
+document.getElementById("evenOutput").innerHTML = evenNumbers;
+
+
+
+// 2. Calculator Function
+
+
+function calculator(num1, num2, operator) {
+    let result;
+
+    switch (operator) {
+        case "+":
+            result = num1 + num2;
+            break;
+        case "-":
+            result = num1 - num2;
+            break;
+        case "*":
+            result = num1 * num2;
+            break;
+        case "/":
+            result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+            break;
+        default:
+            result = "Invalid Operator";
+    }
+
+    return result;
+}
+
+let calcResult = calculator(10, 5, "*");
+document.getElementById("calcOutput").innerHTML = 
+    "10 * 5 = " + calcResult;
+
+
+
+// 3. Find Tax Function
+
+
+function findTax(salary) {
+    let taxRate;
+    let taxAmount;
+
+    switch (true) {
+        case (salary > 0 && salary <= 500000):
+            taxRate = 0;
+            break;
+        case (salary > 500000 && salary <= 1000000):
+            taxRate = 0.10;
+            break;
+        case (salary > 1000000 && salary <= 1500000):
+            taxRate = 0.20;
+            break;
+        case (salary > 1500000):
+            taxRate = 0.30;
+            break;
+        default:
+            taxRate = 0;
+    }
+
+    taxAmount = salary * taxRate;
+    return taxAmount;
+}
+
+let tax = findTax(1200000);
+document.getElementById("taxOutput").innerHTML = 
+    "Salary: ₹12,00,000 → Tax: ₹" + tax;
+
+
+
+// 4. Sum of Products of Corresponding Digits
+
+
+function sumOfDigitProducts(n1, n2) {
+
+    let str1 = n1.toString();
+    let str2 = n2.toString();
+
+    let maxLength = Math.max(str1.length, str2.length);
+
+    str1 = str1.padStart(maxLength, "0");
+    str2 = str2.padStart(maxLength, "0");
+
+    let sum = 0;
+
+    for (let i = 0; i < maxLength; i++) {
+        sum += parseInt(str1[i]) * parseInt(str2[i]);
+    }
+
+    return sum;
+}
+
+let digitResult = sumOfDigitProducts(6, 34);
+document.getElementById("digitOutput").innerHTML =
+    "n1 = 6, n2 = 34 → Result = " + digitResult;
+
+</script>
+
+</body>
+</html>

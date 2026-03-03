@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 9 - JS Practice (Delta)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            background: #1e1e1e;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        h3 {
+            color: #00c3ff;
+        }
+        p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Assignment 9 - JS Practice 1 (Delta)</h1>
+
+<div id="output"></div>
+
+<script>
+
+// Helper function to display output
+function display(title, result) {
+    const outputDiv = document.getElementById("output");
+    const section = document.createElement("div");
+    section.className = "section";
+    section.innerHTML = "<h3>" + title + "</h3><p>" + result + "</p>";
+    outputDiv.appendChild(section);
+}
+
+/* 1️⃣ let, const, var difference */
+function scopeExample() {
+    var a = "var variable";
+    let b = "let variable";
+    const c = "const variable";
+
+    return `
+    var: Function scoped
+    let: Block scoped
+    const: Block scoped and cannot be reassigned
+    `;
+}
+display("1. Scope Difference (var, let, const)", scopeExample());
+
+
+/* 2️⃣ Second fruit */
+const fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+
+function secondFruit(arr) {
+    return arr[1];
+}
+display("2. Second Fruit", secondFruit(fruits));
+
+
+/* 3️⃣ push() and pop() */
+function modifyArray(arr) {
+    arr.push("NewFruit");
+    arr.pop();
+    return arr;
+}
+display("3. Push and Pop Result", modifyArray([...fruits]));
+
+
+/* 4️⃣ Square numbers using map() */
+const numbers = [1, 2, 3, 4, 5];
+
+function squareNumbers(arr) {
+    return arr.map(num => num * num);
+}
+display("4. Squared Numbers", squareNumbers(numbers));
+
+
+/* 5️⃣ Filter odd numbers */
+function filterOdd(arr) {
+    return arr.filter(num => num % 2 !== 0);
+}
+display("5. Odd Numbers Only", filterOdd(numbers));
+
+
+/* 6️⃣ Object person greeting */
+const person = {
+    name: "Vishal",
+    age: 25,
+    occupation: "Developer"
+};
+
+function greet(p) {
+    return `Hello, my name is ${p.name}, I am ${p.age} years old and I work as a ${p.occupation}.`;
+}
+display("6. Greeting Message", greet(person));
+
+
+/* 7️⃣ Rectangle area */
+function rectangleArea(obj) {
+    return obj.width * obj.height;
+}
+display("7. Rectangle Area", rectangleArea({ width: 10, height: 5 }));
+
+
+/* 8️⃣ Object keys */
+const sampleObj = { a: 1, b: 2, c: 3 };
+
+function getKeys(obj) {
+    return Object.keys(obj);
+}
+display("8. Object Keys", getKeys(sampleObj));
+
+
+/* 9️⃣ Merge two objects */
+function mergeObjects(obj1, obj2) {
+    return Object.assign({}, obj1, obj2);
+}
+display("9. Merged Object", JSON.stringify(mergeObjects({x:1}, {y:2})));
+
+
+/* 🔟 Sum using reduce() */
+function sumArray(arr) {
+    return arr.reduce((total, num) => total + num, 0);
+}
+display("10. Sum Using Reduce", sumArray(numbers));
+
+</script>
+
+</body>
+</html>
